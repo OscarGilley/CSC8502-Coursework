@@ -1,0 +1,6 @@
+﻿  Renderer.cpp
+E:\4th year uni\CSC8502\CSC8502\ZXEmulator\Renderer.cpp(86,77): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  ZXEmulator.cpp
+  Generating Code...
+E:\4th year uni\CSC8502\CSC8502\ZXEmulator\Renderer.cpp(86,70): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+LINK : fatal error LNK1104: cannot open file 'nclgl.lib'

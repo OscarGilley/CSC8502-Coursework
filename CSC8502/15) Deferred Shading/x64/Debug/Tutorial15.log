@@ -1,0 +1,4 @@
+﻿  Renderer.cpp
+E:\4th year uni\CSC8502\CSC8502\15) Deferred Shading\Renderer.cpp(26,71): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+E:\4th year uni\CSC8502\CSC8502\15) Deferred Shading\Renderer.cpp(26,32): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Tutorial15.vcxproj -> E:\4th year uni\CSC8502\CSC8502\x64\Debug\Tutorial 15 - Deferred Shading.exe
