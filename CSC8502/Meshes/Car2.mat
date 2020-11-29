@@ -3,47 +3,61 @@ MeshMat
 14
 26
 Body
-0
+2
+Diffuse:/CarFolder/Textures/doge.png
+Bump:CarFolder/Textures/Normals/dogemap2.png
 Grills
-0
+2
+Diffuse:/CarFolder/Textures/doge.png
+Bump:CarFolder/Textures/Normals/dogemap2.png
 Body_2
-0
+2
+Diffuse:/CarFolder/Textures/doge.png
+Bump:CarFolder/Textures/Normals/dogemap2.png
 Window
-0
+2
+Diffuse:/CarFolder/Textures/doge.png
+Bump:CarFolder/Textures/Normals/dogemap2.png
 Brakelights
-0
+2
+Diffuse:/CarFolder/Textures/doge.png
+Bump:CarFolder/Textures/Normals/dogemap2.png
 Tailights
-0
+2
+Diffuse:/CarFolder/Textures/doge.png
+Bump:CarFolder/Textures/Normals/dogemap2.png
 HeadLights
 2
-Diffuse:/Car folder/Textures/HeadLights.png
-Bump:/Car folder/Textures/Normals/HeadLights.png
+Diffuse:/CarFolder/Textures/HeadLights.png
+Bump:/CarFolder/Textures/Normals/HeadLights.png
 Bottom
 2
-Diffuse:/Car folder/Textures/Bottom.png
-Bump:/Car folder/Textures/Normals/Bottom.png
+Diffuse:/CarFolder/Textures/Bottom.png
+Bump:/CarFolder/Textures/Normals/Bottom.png
 ReverseLights
-0
-Number Plate
 2
-Diffuse:/Car folder/Textures/Number Plate.png
-Bump:/Car folder/Textures/Normals/Number Plate.png
+Diffuse:/CarFolder/Textures/doge.png
+Bump:CarFolder/Textures/Normals/dogemap2.png
+NumberPlate
+2
+Diffuse:/CarFolder/Textures/NumberPlate.png
+Bump:/CarFolder/Textures/Normals/NumberPlate.png
 Disc
 2
-Diffuse:/Car folder/Textures/Disc.png
-Bump:/Car folder/Textures/Normals/Disc.png
+Diffuse:/CarFolder/Textures/Disc.png
+Bump:/CarFolder/Textures/Normals/Disc.png
 Rims
 2
-Diffuse:/Car folder/Textures/Rims.png
-Bump:/Car folder/Textures/Normals/Rims.png
-Tires 1
+Diffuse:/CarFolder/Textures/Rims.png
+Bump:/CarFolder/Textures/Normals/Rims.png
+Tire_1
 2
-Diffuse:/Car folder/Textures/Tire_1.png
-Bump:/Car folder/Textures/Normals/Tire_1.png
-Tires 2
+Diffuse:/CarFolder/Textures/Tire_1.png
+Bump:/CarFolder/Textures/Normals/Tire_1.png
+Tire_2
 2
-Diffuse:/Car folder/Textures/Tire_2.png
-Bump:/Car folder/Textures/Normals/Tire_2.png
+Diffuse:/CarFolder/Textures/Tire_2.png
+Bump:/CarFolder/Textures/Normals/Tire_2.png
 0
 1
 2

@@ -4,6 +4,8 @@
 #include "../nclgl/Light.h"
 #include "../nclgl/SceneNode.h"
 #include "../nclgl/CubeRobot.h"
+#include "../nclgl/MeshAnimation.h"
+#include "../nclgl/MeshMaterial.h"
 #include <algorithm>
 const int LIGHT_NUM = 64;
 
@@ -49,6 +51,30 @@ Renderer::Renderer(Window& parent) : OGLRenderer(parent) {
 
 	glGenFramebuffers(1, &bufferFBO);
 	glGenFramebuffers(1, &pointLightFBO);
+
+	/*
+	girlNode = new SceneNode(Mesh::LoadFromMeshFile("eve_j_gonzales.msh"));
+
+	//girlMesh = Mesh::LoadFromMeshFile("eve_j_gonzales.msh");
+	//anim = new MeshAnimation("eve_j_gonzales.anm");
+	//material = new MeshMaterial("eve_j_gonzales.mat");
+
+	girlNode->SetAnimation(MeshAnimation("eve_j_gonzales.anm"));
+	girlNode->SetMaterial(MeshMaterial("eve_j_gonzales.mat"));
+
+	for (int i = 0; i < girlNode->GetMesh()->GetSubMeshCount(); ++i) {
+		const MeshMaterialEntry* matEntry = material->GetMaterialForLayer(i);
+
+		const string* filename = nullptr;
+		matEntry->GetEntry("Diffuse", &filename);
+		string path = TEXTUREDIR + *filename;
+		GLuint texID = SOIL_load_OGL_texture(path.c_str(), SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y);
+		matTextures.emplace_back(texID);
+	}
+	currentFrame = 0;
+	frameTime = 0.0f;
+	*/
+	
 
 	cube = Mesh::LoadFromMeshFile("OffsetCubeY.msh");
 
@@ -170,6 +196,7 @@ void Renderer::UpdateScene(float dt) {
 	frameFrustum.FromMatrix(projMatrix * viewMatrix);
 
 	root->Update(dt);
+
 }
 
 void Renderer::DrawNode(SceneNode* n) {

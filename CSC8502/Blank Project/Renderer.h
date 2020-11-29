@@ -7,6 +7,8 @@ class CubeRobot;
 class Camera;
 class Mesh;
 class HeightMap;
+class MeshAnimation;
+class MeshMaterial;
 
 class Renderer : public OGLRenderer {
 public:
@@ -52,6 +54,7 @@ protected:
 	GLuint earthTex;
 	GLuint earthBump;
 
+	//scene graph stuff
 	Shader* nodeShader;
 	GLuint nodeTexture;
 	Frustum frameFrustum;
@@ -61,5 +64,15 @@ protected:
 	SceneNode* root;
 	Mesh* cube;
 	SceneNode* cubeRobot;
+
+	//model animation
+	SceneNode* girlNode;
+	Shader* shader;
+	MeshAnimation* anim;
+	MeshMaterial* material;
+	vector<GLuint> matTextures;
+
+	int currentFrame;
+	float frameTime;
 
 };

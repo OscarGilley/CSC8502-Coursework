@@ -5,6 +5,9 @@
 #include "Mesh.h"
 #include <vector>
 
+#include "MeshAnimation.h"
+#include "MeshMaterial.h"
+
 class SceneNode {
 public:
 	SceneNode(Mesh* m = NULL, Vector4 colour = Vector4(1, 1, 1, 1));
@@ -32,6 +35,12 @@ public:
 	void SetTexture(GLuint tex) { texture = tex; }
 	GLuint GetTexture() const { return texture; }
 
+	//void SetAnimation(MeshAnimation anim) { animation = anim; }
+	//MeshAnimation GetAnimation() { return animation; }
+
+	//void SetMaterial(MeshMaterial mat) { material = mat; }
+	//MeshMaterial GetMaterial() { return material; }
+
 	static bool CompareByCameraDistance(SceneNode* a, SceneNode* b) {
 		return (a->distanceFromCamera < b->distanceFromCamera) ? true : false;
 	}
@@ -58,5 +67,7 @@ protected:
 	float distanceFromCamera;
 	float boundingRadius;
 	GLuint texture;
+	//MeshAnimation animation;
+	//MeshMaterial material;
 	std::vector<SceneNode*> children;
 };

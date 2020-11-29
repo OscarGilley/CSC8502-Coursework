@@ -25,6 +25,7 @@ public:
 class MeshMaterial
 {
 public:
+	MeshMaterial();
 	MeshMaterial(const std::string& filename);
 	~MeshMaterial() {}
 	const MeshMaterialEntry* GetMaterialForLayer(int i) const;

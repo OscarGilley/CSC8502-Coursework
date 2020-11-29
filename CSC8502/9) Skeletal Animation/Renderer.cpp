@@ -15,9 +15,15 @@ Renderer::Renderer(Window& parent) : OGLRenderer(parent) {
 		return;
 	}
 
-	mesh = Mesh::LoadFromMeshFile("Role_T.msh");
+	/*
+	mesh = Mesh::LoadFromMeshFile("Car2.msh");
 	anim = new MeshAnimation("Role_T.anm");
-	material = new MeshMaterial("Role_T.mat");
+	material = new MeshMaterial("Car2.mat");
+	*/
+
+	mesh = Mesh::LoadFromMeshFile("eve_j_gonzales.msh");
+	anim = new MeshAnimation("eve_j_gonzales.anm");
+	material = new MeshMaterial("eve_j_gonzales.mat");
 
 	for (int i = 0; i < mesh->GetSubMeshCount(); ++i) {
 		const MeshMaterialEntry* matEntry = material->GetMaterialForLayer(i);
@@ -46,10 +52,12 @@ void Renderer::UpdateScene(float dt) {
 	viewMatrix = camera->BuildViewMatrix();
 
 	frameTime -= dt;
+	
 	while (frameTime < 0.0f) {
 		currentFrame = (currentFrame + 1) % anim->GetFrameCount();
 		frameTime += 1.0f / anim->GetFrameRate();
 	}
+	
 }
 
 void Renderer::RenderScene() {
@@ -62,6 +70,7 @@ void Renderer::RenderScene() {
 
 	vector <Matrix4> frameMatrices;
 
+
 	const Matrix4* invBindPose = mesh->GetInverseBindPose();
 	const Matrix4* frameData = anim->GetJointData(currentFrame);
 
@@ -71,6 +80,7 @@ void Renderer::RenderScene() {
 
 	int j = glGetUniformLocation(shader->GetProgram(), "joints");
 	glUniformMatrix4fv(j, frameMatrices.size(), false, (float*)frameMatrices.data());
+
 
 	for (int i = 0; i < mesh->GetSubMeshCount(); ++i) {
 		glActiveTexture(GL_TEXTURE0);

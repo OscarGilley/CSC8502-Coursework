@@ -1,4 +1,6 @@
 #include "SceneNode.h"
+#include "MeshAnimation.h"
+#include "MeshMaterial.h"
 
 SceneNode::SceneNode(Mesh* mesh, Vector4 colour) {
 	this->mesh = mesh;
