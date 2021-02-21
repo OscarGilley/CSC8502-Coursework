@@ -1,0 +1,17 @@
+MeshMat
+1
+3
+3
+leave-4
+1
+Diffuse:/green_leaf_tree.fbm/leave-4.jpg
+Leave 00 back colour
+1
+Diffuse:/green_leaf_tree.fbm/Leave 00 back colour.jpg
+tree_stem1_Base_Color
+2
+Diffuse:/green_leaf_tree.fbm/tree_stem1_Base_Color.jpg
+Bump:/green_leaf_tree.fbm/tree_stem1_Normal_OpenGL.jpg
+0
+1
+2

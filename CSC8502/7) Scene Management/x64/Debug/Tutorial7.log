@@ -1,4 +1,1 @@
-﻿  Renderer.cpp
-E:\4th year uni\CSC8502\CSC8502\7) Scene Management\Renderer.cpp(32,71): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-E:\4th year uni\CSC8502\CSC8502\7) Scene Management\Renderer.cpp(32,32): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-  Tutorial7.vcxproj -> E:\4th year uni\CSC8502\CSC8502\x64\Debug\Tutorial 07 - Scene Management.exe
+﻿

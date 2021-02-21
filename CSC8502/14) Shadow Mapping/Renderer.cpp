@@ -44,7 +44,11 @@ Renderer::Renderer(Window& parent) : OGLRenderer(parent) {
 	glEnable(GL_DEPTH_TEST);
 
 	sceneTransforms.resize(4);
+	//sceneTransforms[0] = Matrix4::Rotation(90, Vector3(1, 0, 0)) * Matrix4::Scale(Vector3(10, 10, 1)) * Matrix4::Translation(Vector3(2000, 2000, -2000));
 	sceneTransforms[0] = Matrix4::Rotation(90, Vector3(1, 0, 0)) * Matrix4::Scale(Vector3(10, 10, 1));
+	//light = new Light(Vector3(-20.0f, 10.0f, -20.0f), Vector4(1, 1, 1, 1), 250.0f);
+
+	
 
 	sceneTime = 0.0f;
 	init = true;

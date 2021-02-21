@@ -1,5 +1,27 @@
-﻿  CubeRobot.cpp
+﻿  glad.c
+  Camera.cpp
+  ComputeShader.cpp
+  CubeRobot.cpp
   Frustum.cpp
+  GameTimer.cpp
+  HeightMap.cpp
+E:\4th year uni\CSC8502\CSC8502\nclgl\HeightMap.cpp(26,48): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+E:\4th year uni\CSC8502\CSC8502\nclgl\HeightMap.cpp(26,31): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+E:\4th year uni\CSC8502\CSC8502\nclgl\HeightMap.cpp(27,39): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Keyboard.cpp
+  Matrix2.cpp
+  Matrix3.cpp
+  Matrix4.cpp
+  Mesh.cpp
+  MeshAnimation.cpp
+  MeshMaterial.cpp
+  Mouse.cpp
+  OGLRenderer.cpp
+  Plane.cpp
+  Quaternion.cpp
   SceneNode.cpp
+  Shader.cpp
+  Window.cpp
   Generating Code...
+E:\4th year uni\CSC8502\CSC8502\nclgl\HeightMap.cpp(27,36): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
   nclgl.vcxproj -> E:\4th year uni\CSC8502\CSC8502\x64\Debug\nclgl.lib

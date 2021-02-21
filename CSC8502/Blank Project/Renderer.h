@@ -18,61 +18,103 @@ public:
 	void RenderScene() override;
 	void UpdateScene(float dt) override;
 
-	void DrawNode(SceneNode* n);
+	void DrawNode(SceneNode* n, Shader*);
 
 protected:
-	void FillBuffers();			//G-Buffer fill render pass
-	void DrawPointLights();		//Lighting render pass
-	void CombineBuffers();		//Combination render pass
 	//make a new texture...
 	void GenerateScreenTexture(GLuint& into, bool depth = false);
 	void BuildNodeLists(SceneNode* from);
+	void DrawSkybox();
+	void DrawCar();
+	void DrawRain();
+	void DrawTransparentNode();
+	void DrawHeightmap();
+	void DrawWater();
+	void DrawTree();
+	void DrawCube();
+	void DrawTreePot();
 	void SortNodeLists();
 	void ClearNodeLists();
 	void DrawNodes();
 
-	Shader* sceneShader;		//Shader to fill GBuffers
-	Shader* pointlightShader;	//Shader to calc lighting
+	//Shader* sceneShader;		//Shader to fill GBuffers
+	Shader* spinShader;
+	Shader* lightShader;
+	Shader* bumpShader;
+	Shader* reflectShader;
+	Shader* skyboxShader;
+	Shader* basicSceneShader;
+	Shader* sceneShader;
+	Shader* shadowShader;
+	Shader* blendShader;
 	Shader* combineShader;
 
-	GLuint bufferFBO;			//FBO for our G-Buffer pass
-	GLuint bufferColourTex;		//Albedo goes here
-	GLuint bufferNormalTex;		//Normals go here
-	GLuint bufferDepthTex;		//Depth goes here
-
-	GLuint pointLightFBO;		//FBO for our lighting pass
-	GLuint lightDiffuseTex;		//Store diffuse lighting
-	GLuint lightSpecularTex;	//Store specular lighting
-
+	vector<SceneNode*> buildings;
+	SceneNode* transparentQuad;
 	HeightMap* heightMap;		//Terrain
-	Light* pointLights;			//Array of lighting data
+	SceneNode* tree;
+	SceneNode* treePot;
+	SceneNode* dogeQuad;
 	Light* light;
+	Light* billBoardLight;
+	Light* billBoardLight2;
+	Light* characterLight;
+	SceneNode* spinCube;
+	SceneNode* blendCube;
 	Mesh* sphere;				//Light volume
 	Mesh* quad;					//To draw a full-screen quad
 	Camera* camera;				//Our usual camera
 	SceneNode* car;
+	SceneNode* car2;
 	GLuint earthTex;
 	GLuint earthBump;
+	Mesh* carMesh;
+	//vector<SceneNode> rain;
+	bool noCar;
+	bool rotatedCar;
+	float deleteTimer;
 
 	//scene graph stuff
 	Shader* nodeShader;
 	GLuint nodeTexture;
+	GLuint nodeBump;
 	Frustum frameFrustum;
 
 	vector<SceneNode*> transparentNodeList;
 	vector<SceneNode*> nodeList;
 	SceneNode* root;
+	SceneNode* water;
 	Mesh* cube;
 	SceneNode* cubeRobot;
 
 	//model animation
 	SceneNode* girlNode;
-	Shader* shader;
+	Shader* animShader;
 	MeshAnimation* anim;
 	MeshMaterial* material;
 	vector<GLuint> matTextures;
 
-	int currentFrame;
-	float frameTime;
+	//cube mapping stuff
+	GLuint cubeMap;
+	GLuint waterTex;
+	float waterRotate;
+	float waterCycle;
+	Mesh* skyboxQuad;
 
+	//shadow mapping stuff
+	void DrawShadowScene();
+	void DrawShadowedObjects();
+	void DrawShadowNode(SceneNode* n, Matrix4 sceneTransform, Shader* passedShader);
+
+	vector<Mesh*> sceneMeshes;
+	vector<Matrix4> sceneTransforms;
+	GLuint shadowTex;
+	GLuint shadowFBO;
+
+	GLuint sceneDiffuse;
+	GLuint sceneBump;
+	float sceneTime;
+	Light* shadowLight;
+	Light* shadowLight2;
+	bool lightDir = false;
 };

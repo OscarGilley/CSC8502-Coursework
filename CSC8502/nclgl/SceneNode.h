@@ -35,11 +35,25 @@ public:
 	void SetTexture(GLuint tex) { texture = tex; }
 	GLuint GetTexture() const { return texture; }
 
-	//void SetAnimation(MeshAnimation anim) { animation = anim; }
-	//MeshAnimation GetAnimation() { return animation; }
+	void SetSecondTexture(GLuint tex) { secondTexture = tex; }
+	GLuint GetSecondTexture() const { return secondTexture; }
 
-	//void SetMaterial(MeshMaterial mat) { material = mat; }
-	//MeshMaterial GetMaterial() { return material; }
+	void SetBump(GLuint bu) { bump = bu; }
+	GLuint GetBump() const { return bump; }
+
+	void SetAnimation(MeshAnimation* anim) { animation = anim; }
+	MeshAnimation* GetAnimation() { return animation; }
+
+	void SetMaterial(MeshMaterial* mat) { material = mat; }
+	MeshMaterial* GetMaterial() { return material; }
+
+	void SetMatTextures(); //{ matTextures = matTex; }
+	vector<GLuint> GetMatTextures() { return matTextures; }
+
+	void SetLight(Light* lightSource) { light = lightSource; }
+	Light* GetLight() { return light; }
+
+	int GetCurrentFrame() { return currentFrame; }
 
 	static bool CompareByCameraDistance(SceneNode* a, SceneNode* b) {
 		return (a->distanceFromCamera < b->distanceFromCamera) ? true : false;
@@ -59,6 +73,7 @@ public:
 
 protected:
 	SceneNode* parent;
+	Light* light;
 	Mesh* mesh;
 	Matrix4 worldTransform;
 	Matrix4 transform;
@@ -67,7 +82,15 @@ protected:
 	float distanceFromCamera;
 	float boundingRadius;
 	GLuint texture;
-	//MeshAnimation animation;
-	//MeshMaterial material;
+	GLuint secondTexture;
+	GLuint bump;
 	std::vector<SceneNode*> children;
+
+	//mesh animation stuff
+	MeshAnimation* animation;
+	MeshMaterial* material;
+	vector<GLuint> matTextures;
+	float frameTime;
+	int currentFrame;
+	
 };

@@ -28,18 +28,19 @@ MeshMaterial::MeshMaterial(const std::string& filename) {
 	int meshCount;
 	file >> matCount;
 	file >> meshCount;
-
+	file.ignore();//Ignore endline after reading float!
 	materialLayers.resize(matCount);
+
 
 	for (int i = 0; i < matCount; ++i) {
 		string name;
 		int count;
-		file >> name;
+		std::getline(file, name); //Read a whole line in, even if it has spaces!
 		file >> count;
-
+		file.ignore();//Ignore endline after reading float!
 		for (int j = 0; j < count; ++j) {
 			string entryData;
-			file >> entryData;
+			std::getline(file, entryData);
 			string channel;
 			string file;
 			size_t split = entryData.find_first_of(':');

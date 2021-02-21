@@ -15,6 +15,7 @@ public:
 	~Light(void) {};
 
 	Vector3 GetPosition() const { return position; }
+	Vector3 GetModifiablePosition() { return position; }
 	void SetPosition(const Vector3& val) { position = val; }
 
 	float GetRadius() const { return radius; }

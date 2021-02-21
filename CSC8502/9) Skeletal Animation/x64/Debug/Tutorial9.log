@@ -1,3 +1,1 @@
-﻿  Renderer.cpp
-E:\4th year uni\CSC8502\CSC8502\9) Skeletal Animation\Renderer.cpp(82,81): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-  Tutorial9.vcxproj -> E:\4th year uni\CSC8502\CSC8502\x64\Debug\Tutorial 09 - Skeletal Animation.exe
+﻿
